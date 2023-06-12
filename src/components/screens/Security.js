@@ -1,8 +1,6 @@
 import React from 'react'
-import Charted from './Charted'
 import styled from 'styled-components'
 import Header from '../includes/Header'
-import { Container } from '@mui/material'
 
 export default function Security() {
   return (

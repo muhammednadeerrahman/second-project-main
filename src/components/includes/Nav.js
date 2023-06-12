@@ -38,7 +38,7 @@ export default function Nav() {
                   <SidebarTitle>
                   Trading
                   </SidebarTitle></SubContainer></NavLink></List>
-                <List><NavLink to ="Transcations"><SubContainer>
+                <List><NavLink to ="Transaction"><SubContainer>
                   <SubLogo  src = {require("../assets/transactiongrey.svg").default}/>
                   <SidebarTitle>
                   Transcations
