@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import Header from '../includes/Header'
+import Charted from './Charted';
 
 
 export default function Dashboard() {
@@ -177,19 +178,7 @@ export default function Dashboard() {
                                     </GraphTitleContainer>
                                     <SpanVolume>VOLUME $223K</SpanVolume>
                                     <MainGraphContainer>
-                                        <MainLeftContainer>
-                                            <Graph></Graph>
-                                            <GraphHorozontalContainer>
-                                                <HorizontalDataUL>
-                                                    <HorizontalData></HorizontalData>
-                                                </HorizontalDataUL>
-                                            </GraphHorozontalContainer>
-                                        </MainLeftContainer>
-                                        <MainRightContainer>
-                                            <VerticalDAtaUL>
-                                                <VerticalData></VerticalData>
-                                            </VerticalDAtaUL>
-                                        </MainRightContainer>
+                                        <Graph><Charted/></Graph>
                                     </MainGraphContainer>
                             </RightGraphContainer>
                         </LeftMiddleInsideBottom>
@@ -549,7 +538,7 @@ color: #983752;
 
 const DashboardMiddleSection = styled.div`
 width:100%;
-height: 300px;
+
 background-color:#171B2C;
 margin-bottom: 50px;
 padding: 20px;
@@ -603,7 +592,6 @@ margin-bottom: 10px;
 `
 const RightGraphContainer = styled.div`
 width: 100%;
-height: 210px;
 
 
 
@@ -673,16 +661,10 @@ color:#7B7F94;
 font-size:10px;
 `
 const MainGraphContainer = styled.div``
-const MainLeftContainer = styled.div``
-const Graph = styled.div``
-const GraphHorozontalContainer = styled.div``
-const HorizontalDataUL = styled.ul``
-const HorizontalData = styled.li``
-const MainRightContainer = styled.div``
-const VerticalDAtaUL = styled.ul``
-const VerticalData = styled.li``
+const Graph = styled.div`
+width: 100%;
 
-
+`
 const LeftBottomContainer = styled.div`
 display: flex;
 justify-content: space-between;
