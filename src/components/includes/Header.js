@@ -86,6 +86,7 @@ width: 30px;
 height: 30px;
 border-radius: 50%;
 margin-right: 10px;
+cursor: pointer;
 
 `
 const DetailSection = styled.div`

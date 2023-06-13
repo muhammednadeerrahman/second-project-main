@@ -1,8 +1,15 @@
-import React from 'react'
-import { NavLink,Outlet } from 'react-router-dom'
+import React,{useState} from 'react'
+import { NavLink,Outlet, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function Nav() {
+
+  const [btnState, setBtnState] = useState(1);
+  const [navClose, setNavClose] = useState(false);
+  let handleFunction = (index) =>{
+    setBtnState(index);
+
+  }
 
   
 
@@ -11,40 +18,42 @@ export default function Nav() {
     <>
         <SideBar>
           <LogoContainer>
-            <Logo src = {require("../assets/logo.png")}></Logo>
-            <LogoTitle>NEXO</LogoTitle>
+            <LogoLink>
+              <Logo src = {require("../assets/logo.png")}></Logo>
+              <LogoTitle>NEXO</LogoTitle>
+            </LogoLink>
           </LogoContainer>
           
             <ul>
-                <List><NavLink to ="/"><SubContainer>
-                  <SubLogo  src = {require("../assets/dashboardgrey.svg").default}/>
+                <List onClick={()=>handleFunction(1)}><NavLink to ="/"><SubContainer>
+                  <SubLogo className={btnState===1?"imageactive":"not"}  src = {require("../assets/dashboardgreen.svg").default}/>
                   <SidebarTitle>
                   Dashboard
                   </SidebarTitle></SubContainer></NavLink>
                   </List>
-                <List><NavLink to ="security" ><SubContainer>
-                  <SubLogo  src = {require("../assets/securitygrey.svg").default}/>
+                <List onClick={()=>handleFunction(2)}><NavLink to ="security" ><SubContainer>
+                  <SubLogo className={btnState===2?"imageactive":"not"} src = {require("../assets/securitygreen.svg").default}/>
                   <SidebarTitle>
                   security
                   </SidebarTitle></SubContainer></NavLink>
                   </List>
-                <List><NavLink to ="Settings"><SubContainer>
-                  <SubLogo  src = {require("../assets/settingsgrey.svg").default}/>
+                <List onClick={()=>handleFunction(3)}><NavLink to ="Settings"><SubContainer>
+                  <SubLogo className={btnState===3?"imageactive":"not"}  src = {require("../assets/settingsgreen.svg").default}/>
                   <SidebarTitle>
                   Settings
                 </SidebarTitle></SubContainer></NavLink></List>
-                <List><NavLink to ="Trading"><SubContainer>
-                  <SubLogo  src = {require("../assets/tradinggrey.svg").default}/>
+                <List onClick={()=>handleFunction(4)}><NavLink to ="Trading"><SubContainer>
+                  <SubLogo className={btnState===4?"imageactive":"not"}  src = {require("../assets/tradinggreen.svg").default}/>
                   <SidebarTitle>
                   Trading
                   </SidebarTitle></SubContainer></NavLink></List>
-                <List><NavLink to ="Transaction"><SubContainer>
-                  <SubLogo  src = {require("../assets/transactiongrey.svg").default}/>
+                <List onClick={()=>handleFunction(5)}><NavLink to ="Transaction"><SubContainer>
+                  <SubLogo className={btnState===5?"imageactive":"not"}  src = {require("../assets/transactiongreen.svg").default}/>
                   <SidebarTitle>
-                  Transcations
+                  Transcation
                   </SidebarTitle></SubContainer></NavLink></List>
-                <List><NavLink to ="Wallet"><SubContainer>
-                  <SubLogo  src = {require("../assets/walletgrey.svg").default}/>
+                <List onClick={()=>handleFunction(6)}><NavLink to ="Wallet"><SubContainer>
+                  <SubLogo className={btnState===6?"imageactive":"not"} src = {require("../assets/walletgreen.svg").default}/>
                   <SidebarTitle> Wallet</SidebarTitle></SubContainer></NavLink>
                   </List>
                 <List></List>
@@ -67,6 +76,7 @@ const SubLogo = styled.img`
 display: block;
 width: 20px;
 height: 20px;
+filter: grayscale(100%);
 
 margin: 0 auto;
 `
@@ -76,6 +86,12 @@ font-weight: 600;
 margin-left: 10px;
 align-self: center;
 justify-self: center;
+font-size: 16px;
+`
+const LogoLink = styled(Link)`
+display: flex;
+align-items: center;
+justify-content: center;
 `
 const Logo = styled.img`
 width: 25px;
