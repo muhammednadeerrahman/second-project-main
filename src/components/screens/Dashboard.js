@@ -153,16 +153,18 @@ export default function Dashboard() {
 
                         </LeftMiddleInsideTop>
                         <LeftMiddleInsideBottom>
-                            <LeftToolContainer>
-			                    <ToolIMage src={require("../assets/tool1.svg").default}/>
-			                    <ToolIMage src={require("../assets/tool2.svg").default}/>
-			                    <ToolIMage src={require("../assets/tool3.svg").default}/>
-			                    <ToolIMage src={require("../assets/tool4.svg").default}/>
-			                    <ToolIMage src={require("../assets/tool5.svg").default}/>
-			                    <ToolIMage src={require("../assets/tool6.svg").default}/>
-			                    <ToolIMage src={require("../assets/tool7.svg").default}/>
-                            </LeftToolContainer>
+                            
                             <RightGraphContainer>
+                                <LeftToolContainer>
+                                    <ToolIMage src={require("../assets/tool1.svg").default}/>
+                                    <ToolIMage src={require("../assets/tool2.svg").default}/>
+                                    <ToolIMage src={require("../assets/tool3.svg").default}/>
+                                    <ToolIMage src={require("../assets/tool4.svg").default}/>
+                                    <ToolIMage src={require("../assets/tool5.svg").default}/>
+                                    <ToolIMage src={require("../assets/tool6.svg").default}/>
+                                    <ToolIMage src={require("../assets/tool7.svg").default}/>
+                                </LeftToolContainer>
+                                <Main>
                                     <GraphTitleContainer>
                                         <GraphTitleLeftContainer>
                                             <GraphType>DEFT/ETH</GraphType>
@@ -176,10 +178,12 @@ export default function Dashboard() {
                                             <DataTitle>C<GraphData>0.0682</GraphData></DataTitle>    
                                         </GraphTitleRightContainer>
                                     </GraphTitleContainer>
+                                
                                     <SpanVolume>VOLUME $223K</SpanVolume>
                                     <MainGraphContainer>
                                         <Graph><Charted/></Graph>
                                     </MainGraphContainer>
+                                </Main>
                             </RightGraphContainer>
                         </LeftMiddleInsideBottom>
                     </DashboardMiddleSection> {/* left middle section */}
@@ -550,29 +554,39 @@ margin-bottom: 20px;
 `
 const MarketContainer = styled.div``
 const MarketTitle = styled.h3`
+font-weight: 500;
 color: #BDC5D9;
+font-size: 16px;
 `
 const TimeContainer = styled.div`
 display: flex;
 justify-content: space-between;
+align-items: center;
+cursor: pointer;
+
 `
 const TimeData = styled.h4`
-color: #fff;
+color: #BDC5D9;
+font-weight: 400;
 margin-right: 10px;
+cursor: pointer;
 `
 const TimeDataSelect = styled.select`
-color: #fff;
-width: 55px;
+color: #BDC5D9;
+width: 45px;
 margin-right: 10px;
+font-weight: 400;
+
 
 `
 const TimeDataOption = styled.option`
-color: #000;
+color: #BDC5D9;
+font-weight: 600;
 `
 const TimeIMages = styled.img`
 display: block;
-width: 20px;
-height: 20px;
+width: 15px;
+height: 15px;
 margin-right: 10px;
 
 `
@@ -587,19 +601,24 @@ width: 30px;
 `
 const ToolIMage = styled.img`
 display: block;
-width: 20px;
-margin-bottom: 10px;
+width: 15px;
+margin-bottom: 5px;
+cursor: pointer;
 `
 const RightGraphContainer = styled.div`
 width: 100%;
+display: flex;
 
-
+`
+const Main = styled.div`
+width:100%;
 
 `
 const GraphTitleContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+padding-right: 25px;
 `
 const GraphTitleLeftContainer = styled.div`
 display: flex;
@@ -609,6 +628,7 @@ width: 25%;
 `
 const GraphType = styled.h3`
 color: #BDC5D9;
+font-weight: 500;
 font-size: 14px;
 
 
@@ -616,12 +636,15 @@ font-size: 14px;
 const GraphTime = styled.h3`
 color: #BDC5D9;
 font-size: 14px;
+font-weight: 500;
+
 
 
 `
 const GraphSwap = styled.h3`
 color: #BDC5D9;
 font-size: 14px;
+font-weight: 500;
 
 
 `
@@ -629,27 +652,27 @@ const GraphTitleRightContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-width: 34%;
+width: 32%;
 
 `
 const DataTitle = styled.span`
 display: flex;
 align-items: center;
 color: #BDC5D9;
-font-size: 12px;
+font-size: 10px;
 
 `
 const GraphDataGreen = styled.span`
 color: #459E75;
 margin-left: 5px;
-font-size: 12px;
+font-size: 10px;
 display: block;
 
 `
 const GraphData = styled.span`
 color: #A1474F;
 margin-left: 5px;
-font-size: 12px;
+font-size: 10px;
 display: block;
 
 

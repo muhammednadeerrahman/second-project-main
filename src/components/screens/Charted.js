@@ -27,7 +27,15 @@ export default function Charted() {
             },
             labels: {
               show: true,
-              rotate: 0,}
+              rotate: 0,
+              style: {
+                colors: "#7B7F94",
+                fontSize: '12px',
+                fontFamily: 'DM Sans',
+                fontWeight: 400,
+
+            }
+            }
             
             
            },  
@@ -36,8 +44,16 @@ export default function Charted() {
             opposite: true,
             labels: {
               formatter: function (value) {
-                return "$ "+(value/10000);
-              }
+                return "$ 0.06642";    // "$ "+(value/10000)
+               
+              },
+              style: {
+                colors: "#7B7F94",
+                fontSize: '12px',
+                fontFamily: 'DM Sans',
+                fontWeight: 400,
+
+            },
             },
           }, 
           chart: {
@@ -48,7 +64,7 @@ export default function Charted() {
         ,
         series: [{
           data: [{
-              x: ["8:00"],
+              x: ["08:00"],
               y: [6629.81, 6650.5, 6623.04, 6633.33]
             },
             {
@@ -64,7 +80,7 @@ export default function Charted() {
                 y: [6623.48, 6627, 6618.38, 6620.35]
               },
             {
-              x: ["9:00"],
+              x: ["09:00"],
               y: [6630.71, 6648.95, 6623.34, 6635.65]
             },
             {
@@ -173,11 +189,11 @@ export default function Charted() {
             },
             {
               x: ["15:45"],
-              y: [6575.96, 6589, 6571.77, 6588.92]
+              y: [6575.96, 6589.25, 6571.77, 6588.92]
             },
             {
               x: ["16:00"],
-              y: [6611, 6622.78, 6610.4, 6614.9]
+              y: [6611.25, 6622.78, 6610.45, 6614.94]
             },
 
           ]
@@ -194,7 +210,7 @@ export default function Charted() {
                     series={state.series}
                     type="candlestick"
                     // width={800}
-                    height={250}
+                    height={200}
                     
                     
                   />
