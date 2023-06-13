@@ -10,9 +10,9 @@ export default function Security() {
             <Header/>
             <Content>
               <Title>Coming soon..!</Title>
-            </Content>
-           
+            </Content>     
         </SecurityPage>
+ 
     </>
   )
 }

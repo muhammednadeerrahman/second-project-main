@@ -37,10 +37,10 @@ height: 80px;
 width: 100%;
 align-items: center;
 background-color:#111219;
+@media (max-width:480px){
+    padding: 20px 20px;
 
-
-
-
+}
 
 `
 const HeaderLeft = styled.div`
@@ -87,11 +87,18 @@ height: 30px;
 border-radius: 50%;
 margin-right: 10px;
 cursor: pointer;
+@media (max-width:480px){
+    margin-right: 0;
+
+}
 
 `
 const DetailSection = styled.div`
 display: flex;
 flex-direction: column;
+@media (max-width:480px){
+    display: none;
+}
 `
 const ProfileName = styled.span`
 color: #BDC5D9;

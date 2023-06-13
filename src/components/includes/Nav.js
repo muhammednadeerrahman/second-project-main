@@ -25,7 +25,7 @@ export default function Nav() {
                     </LogoLink>
                 </LogoContainer>
             
-                <ul>
+                <ListContainer>
                     <List onClick={()=>handleFunction(1)}><NavLink to ="/"><SubContainer>
                     <SubLogo className={btnState===1?"imageactive":"not"}  src = {require("../assets/dashboardgreen.svg").default}/>
                     <SidebarTitle>
@@ -58,7 +58,7 @@ export default function Nav() {
                     <SidebarTitle> Wallet</SidebarTitle></SubContainer></NavLink>
                     </List>
                     <List></List>
-                </ul>
+                </ListContainer>
             </TopContainer>
             <UpdateContainer>
                 <UpdateTitle>Ready To Check</UpdateTitle>  
@@ -80,6 +80,18 @@ height:vh;
 display: flex;
 justify-content: space-between;
 flex-direction: column;
+@media (max-width:1200px) {
+width: 100%;
+  
+}
+@media (max-width:480px) {
+  padding: 15px 0px;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
 `
 const TopContainer = styled.div`
 
@@ -116,21 +128,57 @@ justify-content: center;
 align-items: center;
 margin-bottom: 40px;
 display: flex;
+
 `
 const LogoTitle = styled.h1`
 color: #07af5a;
 font-size: 20px;
 font-weight: 600;
 `
+const ListContainer = styled.ul`
+
+@media (max-width:1200px){
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width:768px){
+
+}
+@media (max-width:480px) {
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+`
 const List = styled.li`
 margin-bottom: 10px;
 display: flex;
 align-items: center;
+@media (max-width:768px){
+  width:33%;
+  justify-content:center;
+  
+
+}
+@media (max-width:480px){
+  width:45%;
+  justify-content:space-between;
+
+  
+  
+
+}
 `
 const SubContainer = styled.div`
 display: flex;
 justify-content: left;
 align-items: flex-start;
+@media (max-width:1200px){
+  
+}
 
 `
 const UpdateContainer = styled.div`
@@ -142,6 +190,11 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 flex-direction: column;
+@media (max-width:480px) {
+  width:90%;
+
+  
+}
 `
 const UpdateTitle = styled.h3`
 font-size: 12px;
@@ -163,4 +216,9 @@ background-color: #20C866;
 padding: 8px 20px;
 border-radius: 10px;
 display: block;
+@media (max-width:480px) {
+  width:90%
+
+  
+}
 `

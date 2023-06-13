@@ -37,7 +37,10 @@ function App() {
 export default App;
 
 const MainContainer = styled.div`
-display: flex;
+display:flex;
+@media (max-width:1200px){
+  display:block;
+}
 
 `
 

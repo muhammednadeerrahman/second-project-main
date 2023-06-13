@@ -1,11 +1,265 @@
 import React, {useState} from 'react'
 import styled from "styled-components"
 import Header from '../includes/Header'
-import Charted from './Charted';
+import ApexCharts from 'apexcharts'
+import Chart from "react-apexcharts";
 
 
 export default function Dashboard() {
-    const [graphdata,setGraphdata] = useState();
+
+    const [state, setState]= useState({
+        options:{
+          candlestick: {
+            wick: {useFillColor: true,}
+          },
+          grid: {
+            show: false},
+          xaxis: {
+            tickPlacement: 'between',
+            tickAmount: 8,
+            axisBorder: {
+              show: false,},
+              crosshairs: {
+                show: false,},
+            
+              axisTicks: {
+                show: false,
+                
+            },
+            labels: {
+              show: true,
+              rotate: 0,
+              style: {
+                colors: "#7B7F94",
+                fontSize: '12px',
+                fontFamily: 'DM Sans',
+                fontWeight: 400,
+
+            }
+            }
+            
+            
+           },  
+          yaxis: {
+           
+            opposite: true,
+            labels: {
+              formatter: function (value) {
+                return "$ 0.06642";    // "$ "+(value/10000)
+               
+              },
+              style: {
+                colors: "#7B7F94",
+                fontSize: '12px',
+                fontFamily: 'DM Sans',
+                fontWeight: 400,
+
+            },
+            },
+          }, 
+          chart: {
+            toolbar: {
+              show: false,}},
+         
+            responsive: [{
+                breakpoint: 640,
+                options: {
+                    yaxis: {
+                        opposite: true,
+                        labels: {
+                          formatter: function (value) {
+                            return "$ .0664";    // "$ "+(value/10000)
+                          },
+                          style: {
+                            colors: "#7B7F94",
+                            fontSize: '10px',
+                            fontFamily: 'DM Sans',
+                        },
+                        },
+                      },
+                    xaxis: {
+                       
+                        labels: {
+                          rotate: 0,
+                          style: {
+                            fontSize: '10px',
+                            fontWeight: 400,
+                        }
+                        }
+                       },   
+                },
+            },
+            {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        height: '250'
+                    },
+                    yaxis: {
+                        opposite: true,
+                        labels: {
+                          formatter: function (value) {
+                            return "$ .0664";    // "$ "+(value/10000)
+                          },
+                          style: {
+                            colors: "#7B7F94",
+                            fontSize: '8px',
+                            fontFamily: 'DM Sans',
+                        },
+                        },
+                      },
+                    xaxis: {
+                       
+                        labels: {
+                          rotate: -90,
+                          style: {
+                            fontSize: '8px',
+                            fontWeight: 400,
+                        }
+                        }
+                       },   
+                },
+            }
+        ]
+        }
+        ,
+        series: [{
+          data: [{
+              x: ["08:00"],
+              y: [6629.81, 6650.5, 6623.04, 6633.33]
+            },
+            {
+              x: ["8:15"],
+              y: [6614.9, 6626.2, 6613.33, 6623.45]
+            },
+            {
+              x: ["8:30"],
+              y: [6632.01, 6643.59, 6620, 6630.11]
+            },
+            {
+                x: ["8:45"],
+                y: [6623.48, 6627, 6618.38, 6620.35]
+              },
+            {
+              x: ["09:00"],
+              y: [6630.71, 6648.95, 6623.34, 6635.65]
+            },
+            {
+              x: ["9:15"],
+              y: [6615.53, 6617.93, 6610, 6615.19]
+            },
+            {
+              x: ["9:30"],
+              y: [6635.65, 6651, 6629.67, 6638.24]
+            },
+            {
+              x: ["9:45"],
+              y: [6615.19, 6621.6, 6608.2, 6620]
+            },
+            {
+              x: ["10:00"],
+              y: [6638.24, 6640, 6620, 6624.47]
+            },
+            {
+              x: ["10:15"],
+              y: [6619.43, 6620.35, 6610.05, 6615.53]
+            },
+            {
+              x: ["10:30"],
+              y: [6624.53, 6636.03, 6621.68, 6624.31]
+            },
+            {
+              x: ["10:45"],
+              y: [6619.54, 6625.17, 6614.15, 6620]
+            },
+            {
+              x: ["11:00"],
+              y: [6624.61, 6632.2, 6617, 6626.02]
+            },
+            {
+              x: ["11:15"],
+              y: [6620.33, 6634.15, 6617.24, 6624.61]
+            },
+            {
+              x: ["11:30"],
+              y: [6627, 6627.62, 6584.22, 6603.02]
+            },
+            {
+              x: ["11:45"],
+              y: [6625.95, 6626, 6611.66, 6617.58]
+            },
+            {
+              x: ["12:00"],
+              y: [6605, 6608.03, 6598.95, 6604.01]
+            },
+            {
+              x: ["12:15"],
+              y: [6619, 6625.97, 6595.27, 6598.86]
+            },
+            {
+              x: ["12:30"],
+              y: [6604.5, 6614.4, 6602.26, 6608.02]
+            },
+            {
+              x: ["12:45"],
+              y: [6598.86, 6598.88, 6570, 6587.16]
+            },
+            {
+              x: ["13:00"],
+              y: [6608.02, 6610.68, 6601.99, 6608.91]
+            },
+            {
+              x: ["13:15"],
+              y: [6588.86, 6600, 6580, 6593.4]
+            },
+            {
+              x: ["13:30"],
+              y: [6608.91, 6618.99, 6608.01, 6612]
+            },
+            {
+              x: ["13:45"],
+              y: [6593.99, 6598.89, 6585, 6587.81]
+            },
+            {
+              x: ["14:00"],
+              y: [6612, 6615.13, 6605.09, 6612]
+            },
+            {
+              x: ["14:15"],
+              y: [6587.81, 6592.73, 6567.14, 6578]
+            },
+            {
+              x: ["14:30"],
+              y: [6612, 6624.12, 6608.43, 6622.95]
+            },
+            {
+              x: ["14:45"],
+              y: [6578.35, 6581.72, 6567.39, 6579]
+            },
+            {
+              x: ["15:00"],
+              y: [6623.91, 6623.91, 6615, 6615.67]
+            },
+            {
+              x: ["15:15"],
+              y: [6579.38, 6580.92, 6566.77, 6575.96]
+            },
+            {
+              x: ["15:30"],
+              y: [6618.69, 6618.74, 6610, 6610.4]
+            },
+            {
+              x: ["15:45"],
+              y: [6575.96, 6589.25, 6571.77, 6588.92]
+            },
+            {
+              x: ["16:00"],
+              y: [6611.25, 6622.78, 6610.45, 6614.94]
+            },
+          ]
+        }],  
+      })
+     
     const [activityDay, setActivityDay] = useState({
         
             withdrawal:
@@ -181,7 +435,19 @@ export default function Dashboard() {
                                 
                                     <SpanVolume>VOLUME $223K</SpanVolume>
                                     <MainGraphContainer>
-                                        <Graph><Charted/></Graph>
+                                        <Graph>  
+                                            <ChartContainer>
+                                                <Chart
+                                                    options={state.options}
+                                                    series={state.series}
+                                                    type="candlestick"
+                                                    // width={800}
+                                                    height={200}
+                                                    
+                                                    
+                                                />
+                                            </ChartContainer>
+                                        </Graph>
                                     </MainGraphContainer>
                                 </Main>
                             </RightGraphContainer>
@@ -452,13 +718,26 @@ justify-content: space-between;
 max-width :1200px;
 width: 90%;
 margin: 60px auto 0;
+@media (max-width:980px){
+    flex-direction: column;
+}
+@media (max-width:480px){
+    margin: 30px auto;
+
+}
 `
 const DashboardLeft = styled.div`
 width:70%;
+@media (max-width:980px){
+    width:100%;
+}
 `
 const LeftTop = styled.div`
 display: flex;
 justify-content: space-between;
+@media (max-width: 640px){
+    flex-direction: column;
+}
 `
 const TopThreeContainer = styled.div`
 border-radius: 8px;
@@ -466,10 +745,21 @@ padding: 20px;
 width: 25%;
 background-color: #171B2C ;
 margin: 0 0 50px;
+@media (max-width: 1200px){
+    width: 32%; 
+}
+@media (max-width: 640px){
+    width: 100%;
+}
+@media (max-width: 640px){
+    margin: 0 0 20px;
+
+}
 `
 const TopInnerTop = styled.div`
 display: flex;
 justify-content: space-between;
+
 `
 const TopCount = styled.h4`
 color: #fff;
@@ -551,8 +841,15 @@ const LeftMiddleInsideTop = styled.div`
 display: flex;
 justify-content: space-between;
 margin-bottom: 20px;
+@media (max-width:640px){
+    flex-direction: column;
+    
+}
 `
-const MarketContainer = styled.div``
+const MarketContainer = styled.div`
+
+
+`
 const MarketTitle = styled.h3`
 font-weight: 500;
 color: #BDC5D9;
@@ -563,6 +860,11 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 cursor: pointer;
+@media (max-width:640px){
+    width: 50%;
+    
+}
+
 
 `
 const TimeData = styled.h4`
@@ -598,20 +900,39 @@ const LeftToolContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 30px;
+@media (max-width:640px){
+    width: 100%;
+    flex-direction: row;
+    justify-content: right;
+      
+}
 `
 const ToolIMage = styled.img`
 display: block;
 width: 15px;
 margin-bottom: 5px;
 cursor: pointer;
+@media (max-width:640px){
+    margin-right: 10px;
+
+      
+}
 `
 const RightGraphContainer = styled.div`
 width: 100%;
 display: flex;
+@media (max-width:640px){
+    flex-direction:column;  
+}
 
 `
 const Main = styled.div`
 width:100%;
+@media (max-width:640px){
+    flex-direction:column;  
+    justify-content: left;
+}
+
 
 `
 const GraphTitleContainer = styled.div`
@@ -619,12 +940,30 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding-right: 25px;
+@media (max-width:640px){
+
+flex-direction:column;
+justify-content: flex-start;
+align-items: flex-start;
+
+
+  
+}
 `
 const GraphTitleLeftContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: 25%;
+@media (max-width:640px){
+width: 45%;
+margin-bottom: 10px;
+
+align-items: center;
+
+
+       
+}
 `
 const GraphType = styled.h3`
 color: #BDC5D9;
@@ -692,13 +1031,22 @@ const LeftBottomContainer = styled.div`
 display: flex;
 justify-content: space-between;
 margin-bottom: 50px;
+@media (max-width:640px){
+    flex-direction: column;
+
+}
+
 `
 const LeftBottomTwoContainers = styled.div`
 width:46%;
 background:#171B2C;
 border-radius: 8px;
 padding: 20px;
-
+@media (max-width:640px){
+width:100%;
+margin-bottom: 15px;
+    
+}
 `
 const ActivityContainer = styled.div`
 display: flex;
@@ -881,6 +1229,10 @@ color: #A1474F;
 
 const DashboardRight = styled.div`
 width:25%;
+@media (max-width:980px){
+    width:100%;
+}
+
 
 `
 const RightTopContainer = styled.div`
@@ -1000,7 +1352,10 @@ border-top-left-radius :0;
 const BitCoinLeftContainer = styled.div`
 display: flex;
 align-items: center;
-box-shadow: rgb(23, 27, 44) -17px 26px 7px, rgb(23, 27, 44) -18px 10px 15px, rgb(23, 27, 44) -20px -15px 5px, rgb(23, 27, 44) 8px 32px 23px;
+box-shadow: rgb(23, 27, 44) -17px 26px 7px,
+ rgb(23, 27, 44) -18px 10px 15px,
+ rgb(23, 27, 44) -20px -15px 5px,
+  rgb(23, 27, 44) 8px 32px 23px;
 
 
 `
@@ -1057,6 +1412,11 @@ background-color: #171B2C ;
 margin-top: 50px;
 padding: 20px;
 border-radius: 8px;
+@media (max-width:480px) {
+margin: 20px 0 20px;
+
+    
+}
 `
 const RightBottomInsideTop = styled.div`
 display: flex;
@@ -1109,7 +1469,10 @@ const SaleAmount = styled.h4`
 color: #BDC5D9;
 font-size: 15px;
 font-weight:600;
-box-shadow: rgb(23, 27, 44) -17px 26px 7px, rgb(23, 27, 44) -18px 10px 15px, rgb(23, 27, 44) -20px -15px 5px, rgb(23, 27, 44) -1px 11px 23px;;
+box-shadow: rgb(23, 27, 44) -17px 26px 7px,
+ rgb(23, 27, 44) -18px 10px 15px,
+ rgb(23, 27, 44) -20px -15px 5px,
+  rgb(23, 27, 44) -1px 11px 23px;;
 `
 
 const CurrencyDropdown = styled.select`
@@ -1136,7 +1499,10 @@ font-size: 12px;
 
 `
 
+const ChartContainer = styled.div`
+width: 100%;
 
+`
 
 
 
