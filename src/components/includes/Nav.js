@@ -10,7 +10,6 @@ export default function Nav() {
     setBtnState(index);
 
   }
-
   return (
     <>
         <SideBar>
@@ -21,7 +20,6 @@ export default function Nav() {
                     <LogoTitle>NEXO</LogoTitle>
                     </LogoLink>
                 </LogoContainer>
-            
                 <ListContainer>
                     <List onClick={()=>handleFunction(1)}><NavLink to ="/"><SubContainer>
                     <SubLogo className={btnState===1?"imageactive":"not"}  src = {require("../assets/dashboardgreen.svg").default}/>
@@ -62,8 +60,7 @@ export default function Nav() {
                 <UpdateVer>Update New V 254ce</UpdateVer>
                 <UpdateButton>Update</UpdateButton>
             </UpdateContainer>
-        </SideBar>
-        
+        </SideBar>   
         <Outlet/>
     </>
   )

@@ -20,9 +20,7 @@ export default function Header() {
                             <ProfilePositon>Admin</ProfilePositon>
                         </DetailSection>
                     </HeadingNav>
-
                 </HeaderRight>
-            
         </SectionHeader>
     
         
