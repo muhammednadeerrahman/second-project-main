@@ -11,9 +11,6 @@ export default function Nav() {
 
   }
 
-  
-
-
   return (
     <>
         <SideBar>

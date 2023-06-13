@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../includes/Header'
+import {Helmet} from "react-helmet";
 
 export default function Trading() {
   return (
     <>
+     <Helmet>
+        <title>Trading</title>
+       </Helmet>
     <Page>
       <Header/>
       <Content>

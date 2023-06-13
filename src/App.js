@@ -20,7 +20,7 @@ function App() {
         <Router>
         <Nav/>
             <Routes >
-              <Route path='/' element={<Dashboard/>}></Route>
+              <Route path='/' index element={<Dashboard/>}></Route>
               <Route path='Security' element={<Security/>}></Route>
               <Route path='Trading' element={<Trading/>}></Route>
               <Route path='Settings' element={<Settings/>}></Route>

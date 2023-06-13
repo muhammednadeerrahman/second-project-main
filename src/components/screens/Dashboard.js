@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Header from '../includes/Header'
 import ApexCharts from 'apexcharts'
 import Chart from "react-apexcharts";
+import {Helmet} from "react-helmet";
 
 
 export default function Dashboard() {
@@ -316,7 +317,9 @@ export default function Dashboard() {
 
   return (
     <>
-        
+        <Helmet>
+            <title>Dashboard</title>
+        </Helmet>
         <SectionDashboard>
         <Header/>
             <SectionWrapper>
