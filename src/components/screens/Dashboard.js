@@ -447,7 +447,7 @@ display: flex;
 justify-content: space-between;
 max-width :1200px;
 width: 90%;
-margin: 0 auto;
+margin: 60px auto 0;
 `
 const DashboardLeft = styled.div`
 width:70%;
@@ -461,7 +461,7 @@ border-radius: 8px;
 padding: 20px;
 width: 25%;
 background-color: #171B2C ;
-margin: 60px 0 50px;
+margin: 0 0 50px;
 `
 const TopInnerTop = styled.div`
 display: flex;
