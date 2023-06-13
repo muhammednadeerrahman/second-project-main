@@ -17,61 +17,74 @@ export default function Nav() {
   return (
     <>
         <SideBar>
-          <LogoContainer>
-            <LogoLink>
-              <Logo src = {require("../assets/logo.png")}></Logo>
-              <LogoTitle>NEXO</LogoTitle>
-            </LogoLink>
-          </LogoContainer>
-          
-            <ul>
-                <List onClick={()=>handleFunction(1)}><NavLink to ="/"><SubContainer>
-                  <SubLogo className={btnState===1?"imageactive":"not"}  src = {require("../assets/dashboardgreen.svg").default}/>
-                  <SidebarTitle>
-                  Dashboard
-                  </SidebarTitle></SubContainer></NavLink>
-                  </List>
-                <List onClick={()=>handleFunction(2)}><NavLink to ="security" ><SubContainer>
-                  <SubLogo className={btnState===2?"imageactive":"not"} src = {require("../assets/securitygreen.svg").default}/>
-                  <SidebarTitle>
-                  security
-                  </SidebarTitle></SubContainer></NavLink>
-                  </List>
-                <List onClick={()=>handleFunction(3)}><NavLink to ="Settings"><SubContainer>
-                  <SubLogo className={btnState===3?"imageactive":"not"}  src = {require("../assets/settingsgreen.svg").default}/>
-                  <SidebarTitle>
-                  Settings
-                </SidebarTitle></SubContainer></NavLink></List>
-                <List onClick={()=>handleFunction(4)}><NavLink to ="Trading"><SubContainer>
-                  <SubLogo className={btnState===4?"imageactive":"not"}  src = {require("../assets/tradinggreen.svg").default}/>
-                  <SidebarTitle>
-                  Trading
-                  </SidebarTitle></SubContainer></NavLink></List>
-                <List onClick={()=>handleFunction(5)}><NavLink to ="Transaction"><SubContainer>
-                  <SubLogo className={btnState===5?"imageactive":"not"}  src = {require("../assets/transactiongreen.svg").default}/>
-                  <SidebarTitle>
-                  Transcation
-                  </SidebarTitle></SubContainer></NavLink></List>
-                <List onClick={()=>handleFunction(6)}><NavLink to ="Wallet"><SubContainer>
-                  <SubLogo className={btnState===6?"imageactive":"not"} src = {require("../assets/walletgreen.svg").default}/>
-                  <SidebarTitle> Wallet</SidebarTitle></SubContainer></NavLink>
-                  </List>
-                <List></List>
-            </ul>
-
+            <TopContainer>
+                <LogoContainer>
+                    <LogoLink>
+                    <Logo src = {require("../assets/logo.png")}></Logo>
+                    <LogoTitle>NEXO</LogoTitle>
+                    </LogoLink>
+                </LogoContainer>
+            
+                <ul>
+                    <List onClick={()=>handleFunction(1)}><NavLink to ="/"><SubContainer>
+                    <SubLogo className={btnState===1?"imageactive":"not"}  src = {require("../assets/dashboardgreen.svg").default}/>
+                    <SidebarTitle>
+                    Dashboard
+                    </SidebarTitle></SubContainer></NavLink>
+                    </List>
+                    <List onClick={()=>handleFunction(2)}><NavLink to ="security" ><SubContainer>
+                    <SubLogo className={btnState===2?"imageactive":"not"} src = {require("../assets/securitygreen.svg").default}/>
+                    <SidebarTitle>
+                    security
+                    </SidebarTitle></SubContainer></NavLink>
+                    </List>
+                    <List onClick={()=>handleFunction(3)}><NavLink to ="Settings"><SubContainer>
+                    <SubLogo className={btnState===3?"imageactive":"not"}  src = {require("../assets/settingsgreen.svg").default}/>
+                    <SidebarTitle>
+                    Settings
+                    </SidebarTitle></SubContainer></NavLink></List>
+                    <List onClick={()=>handleFunction(4)}><NavLink to ="Trading"><SubContainer>
+                    <SubLogo className={btnState===4?"imageactive":"not"}  src = {require("../assets/tradinggreen.svg").default}/>
+                    <SidebarTitle>
+                    Trading
+                    </SidebarTitle></SubContainer></NavLink></List>
+                    <List onClick={()=>handleFunction(5)}><NavLink to ="Transaction"><SubContainer>
+                    <SubLogo className={btnState===5?"imageactive":"not"}  src = {require("../assets/transactiongreen.svg").default}/>
+                    <SidebarTitle>
+                    Transcation
+                    </SidebarTitle></SubContainer></NavLink></List>
+                    <List onClick={()=>handleFunction(6)}><NavLink to ="Wallet"><SubContainer>
+                    <SubLogo className={btnState===6?"imageactive":"not"} src = {require("../assets/walletgreen.svg").default}/>
+                    <SidebarTitle> Wallet</SidebarTitle></SubContainer></NavLink>
+                    </List>
+                    <List></List>
+                </ul>
+            </TopContainer>
+            <UpdateContainer>
+                <UpdateTitle>Ready To Check</UpdateTitle>  
+                <UpdateVer>Update New V 254ce</UpdateVer>
+                <UpdateButton>Update</UpdateButton>
+            </UpdateContainer>
         </SideBar>
+        
         <Outlet/>
     </>
   )
 }
 
 const SideBar = styled.div`
-padding: 30px 50px 0;
-
+padding: 30px 50px;
 width: 18%;
 background-color:#171B2C;
 height:vh;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
 `
+const TopContainer = styled.div`
+
+`
+
 const SubLogo = styled.img`
 display: block;
 width: 20px;
@@ -120,7 +133,34 @@ justify-content: left;
 align-items: flex-start;
 
 `
+const UpdateContainer = styled.div`
 
+background-color: #212531;
+border-radius: 8px;
+padding: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-direction: column;
+`
+const UpdateTitle = styled.h3`
+font-size: 12px;
+font-weight: 600;
+color: #BDC5D9;
+white-space: nowrap;
+margin-bottom: 10px;
+`
+const UpdateVer = styled.h5`
+color: #7B7F94;
+font-size: 10px;
+margin-bottom: 10px;
+white-space: nowrap;
 
-
-
+`
+const UpdateButton = styled.button`
+color: #fff;
+background-color: #20C866;
+padding: 8px 20px;
+border-radius: 10px;
+display: block;
+`

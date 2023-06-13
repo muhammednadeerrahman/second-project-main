@@ -82,3 +82,13 @@ h1, h2, h3, h4, h5, h6
   font-family: 'DM Sans';
 
 }
+img.imageactive{
+  filter: none;
+}
+span{
+  cursor: pointer;
+}
+
+button.active{
+  color: #BDC5D9;
+}
