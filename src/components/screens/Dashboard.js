@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from "styled-components"
 import Header from '../includes/Header'
 import Charted from './Charted';
 
 
 export default function Dashboard() {
+    const [graphdata,setGraphdata] = useState();
     const [activityDay, setActivityDay] = useState({
         
             withdrawal:
@@ -20,45 +21,44 @@ export default function Dashboard() {
     }
     );
 
-   const activityLog =() =>{
-
-    setActivityDay({
-        withdrawal:{amount : "-$1403.00",
-        type: "ETH 0.64"},
-        CashIn:{amount : "+$2203.00",
-                type: "BIT 0.22"},
-        TopUp:{amount : "-$403.00",
-               type: "ETH 0.44"}
-            })
-
-
-
-    };
-    const activityLogMonth =() =>{
-
-        setActivityDay({
-            withdrawal:{amount : "-$11403.00",
-                        type: "ETH 0.1264"},
-            CashIn:{amount : "+$9943.00",
-                    type: "BIT 1.22"},
-            TopUp:{amount : "-$1903.00",
-                   type: "ETH 22.24"}
-    
-        })
-        };
-        const activityLogYear =() =>{
-
+    const [btnstate, setBtnState] = useState(1);
+        let Togglebtn = (index) =>{
+        setBtnState(index);
+        let id =index;
+        if(id==1){
             setActivityDay({
-                withdrawal:{amount : "-$991403.00",
-                            type: "ETH 7.1264"},
-                    CashIn:{amount : "+$89943.00",
-                            type: "BIT 175.25"},
-                     TopUp:{amount : "-$72903.00",
-                            type: "ETH 754.84"}
-        
-            })
-            };
+                withdrawal:{amount : "-$1403.00",
+                type: "ETH 0.64"},
+                CashIn:{amount : "+$2203.00",
+                        type: "BIT 0.22"},
+                TopUp:{amount : "-$403.00",
+                       type: "ETH 0.44"}
+                    })
 
+        }
+        if(id==2){
+            setActivityDay({
+                withdrawal:{amount : "-$11403.00",
+                            type: "ETH 0.1264"},
+                CashIn:{amount : "+$9943.00",
+                        type: "BIT 1.22"},
+                TopUp:{amount : "-$1903.00",
+                       type: "ETH 22.24"}
+        
+            });
+        }
+        if(id==3)
+        {setActivityDay({
+            withdrawal:{amount : "-$991403.00",
+                        type: "ETH 7.1264"},
+                CashIn:{amount : "+$89943.00",
+                        type: "BIT 175.25"},
+                 TopUp:{amount : "-$72903.00",
+                        type: "ETH 754.84"}
+    
+        })}
+        
+        };
 
   return (
     <>
@@ -191,9 +191,9 @@ export default function Dashboard() {
                                     <ActivityTitile>Activity</ActivityTitile>
                                 </ActivityLeftContainer>
                                 <ActivityRightContainer>
-                                    <ActivityButtons onClick={activityLog}>D</ActivityButtons>
-                                    <ActivityButtons onClick={activityLogMonth}>M</ActivityButtons>
-                                    <ActivityButtons onClick={activityLogYear}>Y</ActivityButtons>           
+                                    <ActivityButtons className={btnstate ===1?"active":"notactive"} onClick={() =>Togglebtn(1)} >D</ActivityButtons>
+                                    <ActivityButtons className={btnstate ===2?"active":"notactive"} onClick={() =>Togglebtn(2)} >M</ActivityButtons>
+                                    <ActivityButtons className={btnstate ===3?"active":"notactive"} onClick={() =>Togglebtn(3)} >Y</ActivityButtons>         
                                 </ActivityRightContainer>
                             </ActivityContainer>
                             <MoneyContainer>
