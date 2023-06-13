@@ -952,23 +952,23 @@ align-items: flex-start;
 `
 const GraphTitleLeftContainer = styled.div`
 display: flex;
-justify-content: space-between;
 align-items: center;
 width: 25%;
 @media (max-width:640px){
 width: 45%;
 margin-bottom: 10px;
+align-items: center;     
+}
+@media (max-width:980px){
+width: 30%;
 
-align-items: center;
-
-
-       
 }
 `
 const GraphType = styled.h3`
 color: #BDC5D9;
 font-weight: 500;
 font-size: 14px;
+margin-right: 10px;
 
 
 `
@@ -976,6 +976,8 @@ const GraphTime = styled.h3`
 color: #BDC5D9;
 font-size: 14px;
 font-weight: 500;
+margin-right: 10px;
+
 
 
 
@@ -992,6 +994,18 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 width: 32%;
+@media (max-width:768px){
+    width:40%
+}
+@media (max-width:640px){
+    width:60%
+}
+@media (max-width:480px){
+    width:80%
+}
+@media (max-width:360px){
+    width:100%
+}
 
 `
 const DataTitle = styled.span`

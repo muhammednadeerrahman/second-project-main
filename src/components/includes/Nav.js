@@ -163,12 +163,18 @@ align-items: center;
   
 
 }
+@media (max-width:640px){
+  padding: 20px;
+
+
+
+}
 @media (max-width:480px){
   width:45%;
-  justify-content:space-between;
 
-  
-  
+}
+@media (max-width:320px){
+  width:100%;
 
 }
 `
