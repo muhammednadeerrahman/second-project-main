@@ -11,7 +11,34 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
+  }@font-face {
+    font-family: 'DM Sans';
+    src: url('./components/fonts/DMSans-Regular.woff2') format('woff2'),
+        url('./components/fonts/DMSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./components/fonts/DMSans-Bold.woff2') format('woff2'),
+        url('./components/fonts/DMSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./components/fonts/DMSans-Medium.woff2') format('woff2'),
+        url('./components/fonts/DMSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 
 ul,ol{
@@ -47,4 +74,11 @@ option{
 }
 span{
   cursor: pointer;
+  font-family: 'DM Sans';
+
+}
+h1, h2, h3, h4, h5, h6
+{
+  font-family: 'DM Sans';
+
 }
